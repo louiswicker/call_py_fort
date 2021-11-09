@@ -27,6 +27,7 @@ endif(${CMAKE_Fortran_COMPILER_ID} MATCHES GNU)
 
 add_subdirectory(src)
 find_package(PFUNIT)
+#set(PFUNIT_DIR "${PFUNIT_DIR} /Users/Louis.Wicker/Software/call_py_fort/pFUnit/build")
 if(${PFUNIT_FOUND})
     add_subdirectory(test)
 endif()

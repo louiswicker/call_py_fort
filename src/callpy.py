@@ -1,6 +1,7 @@
 from my_plugin import ffi
 import importlib
 import numpy as np
+import os
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -85,10 +86,16 @@ def call_function(module_name, function_name):
     function_name = ffi.string(function_name).decode("UTF-8")
 
     # import the python module
+
+    print(" right before " + module_name)
+
     mod = importlib.import_module(module_name)
+
+    print("import sucessful  ", mod)
 
     # the function we want to call
     fun = getattr(mod, function_name)
+    print(fun)
 
     # call the function
     # this function can edit STATE inplace

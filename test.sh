@@ -1,4 +1,4 @@
 set -e
 export PYTHONPATH=$(pwd)/src:$(pwd)/test
-make
-build/test/unittests
+cd build/test
+my_tests
